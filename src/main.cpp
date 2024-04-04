@@ -12,6 +12,7 @@ using namespace std;
 #define CELL_SIZE 10 // optimally should be a factor of WIDTH and HEIGHT
 
 int main(int argc, char* argv[]) {
+
   if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
     cout << "Error initializing SDL: " << SDL_GetError() << endl;
   }
@@ -26,20 +27,7 @@ int main(int argc, char* argv[]) {
   SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
   cout << "Game initialized." << endl;
 
-  int **grid = new int*[WIDTH / CELL_SIZE];
-
-  for (int i = 0; i < WIDTH / CELL_SIZE; i++) {
-    grid[i] = new int[HEIGHT / CELL_SIZE];
-    for (int j = 0; j < HEIGHT / CELL_SIZE; j++) {
-      grid[i][j] = 0;
-    }
-  }
-
-  grid[10][10] = 1;
-  grid[10][11] = 1;
-  grid[10][12] = 1;
-  grid[9][12] = 1;
-  grid[8][11] = 1;
+  int** grid = create_random_grid(WIDTH, HEIGHT, CELL_SIZE);
 
   bool running = true;
   SDL_Event event;
