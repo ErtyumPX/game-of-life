@@ -7,3 +7,5 @@ using namespace std;
 void draw_grid(SDL_Renderer* renderer, int **grid, int WIDTH, int HEIGHT, int CELL_SIZE);
 
 void update_grid(int **grid, int WIDTH, int HEIGHT, int CELL_SIZE);
+
+int** create_random_grid(int WIDTH, int HEIGHT, int CELL_SIZE);

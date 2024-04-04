@@ -15,6 +15,7 @@ void draw_grid(SDL_Renderer* renderer, int **grid, int WIDTH, int HEIGHT, int CE
   }
 }
 
+
 void update_grid(int **grid, int WIDTH, int HEIGHT, int CELL_SIZE) {
   int **new_grid = new int*[WIDTH / CELL_SIZE];
   for (int i = 0; i < WIDTH / CELL_SIZE; i++) {
@@ -71,4 +72,16 @@ void update_grid(int **grid, int WIDTH, int HEIGHT, int CELL_SIZE) {
   for (int i = 0; i < WIDTH / CELL_SIZE; i++) {
     delete[] new_grid[i];
   }
+}
+
+
+int** create_random_grid(int WIDTH, int HEIGHT, int CELL_SIZE) {
+  int **grid = new int*[WIDTH / CELL_SIZE];
+  for (int i = 0; i < WIDTH / CELL_SIZE; i++) {
+    grid[i] = new int[HEIGHT / CELL_SIZE];
+    for (int j = 0; j < HEIGHT / CELL_SIZE; j++) {
+      grid[i][j] = rand() % 2;
+    }
+  }
+  return grid;
 }
