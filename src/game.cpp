@@ -46,20 +46,17 @@ void update_grid(int **grid, int WIDTH, int HEIGHT, int CELL_SIZE) {
       if (grid[i][j] == 1) {
         if (neighbors < 2) {
           new_grid[i][j] = 0;
-          cout << "Cell at " << i << ", " << j << " died due to underpopulation." << endl;
         }
         else if (neighbors == 2 || neighbors == 3) {
           new_grid[i][j] = 1;
         }
         else if (neighbors > 3) {
           new_grid[i][j] = 0;
-          cout << "Cell at " << i << ", " << j << " died due to overpopulation." << endl;
         }
       }
       else {
         if (neighbors == 3) {
           new_grid[i][j] = 1;
-          cout << "Cell at " << i << ", " << j << " was born." << endl;
         }
       }
     }
