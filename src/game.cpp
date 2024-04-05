@@ -1,4 +1,5 @@
 #include <iostream>
+#include <time.h>
 #include "game.hpp"
 
 void draw_grid(SDL_Renderer* renderer, int **grid, int WIDTH, int HEIGHT, int CELL_SIZE) {
@@ -76,6 +77,7 @@ void update_grid(int **grid, int WIDTH, int HEIGHT, int CELL_SIZE) {
 
 
 int** create_random_grid(int WIDTH, int HEIGHT, int CELL_SIZE) {
+  srand(time(NULL));
   int **grid = new int*[WIDTH / CELL_SIZE];
   for (int i = 0; i < WIDTH / CELL_SIZE; i++) {
     grid[i] = new int[HEIGHT / CELL_SIZE];
