@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#define FPS 15
+#define FPS 60
 #define WIDTH 800
 #define HEIGHT 800
 #define CELL_SIZE 10 // optimally should be a factor of WIDTH and HEIGHT
@@ -27,7 +27,7 @@ int main(int argc, char* argv[]) {
   SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
   cout << "Game initialized." << endl;
 
-  int** grid = create_random_grid(WIDTH, HEIGHT, CELL_SIZE);
+  bool** grid = create_random_grid(WIDTH, HEIGHT, CELL_SIZE);
 
   bool running = true;
   SDL_Event event;
