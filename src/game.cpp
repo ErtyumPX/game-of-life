@@ -40,7 +40,7 @@ void update_grid(bool **grid, int WIDTH, int HEIGHT, int CELL_SIZE) {
           int new_j = j + y;
           // check if the neighbor is within the grid bounds
           if (new_i >= 0 && new_i < WIDTH / CELL_SIZE && new_j >= 0 && new_j < HEIGHT / CELL_SIZE) {
-            neighbors += grid[new_i][new_j] == true ? 1 : 0;
+            neighbors += grid[new_i][new_j];
           }
         }
       }
