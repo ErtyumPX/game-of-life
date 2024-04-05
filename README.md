@@ -4,6 +4,12 @@ I believe it was the fastest project I've ever done which took around 1.5 hours.
 
 Infamous Conway's Game of Life implemented in C++ with SDL2.
 
+---
+
+<p align="left">
+  <img width="400" height="400" src="https://github.com/ErtyumPX/game-of-life/blob/main/assets/images/window_screenshot.png?raw=true">
+</p>
+
 ## License
 
 This project is licensed under the [GNU GPL-3.0](https://github.com/ErtyumPX/game-of-life/blob/main/LICENSE) license.
@@ -34,12 +40,6 @@ After fulfilling dependencies, download or clone the project and use Makefile to
 > make run
 ```
 
-To run tests and check if everything works:
-
-```
-> make test
-```
-
 Since SDL2 is a cross-platform media library, output should work on Windows, MacOS and Linux.
 
 ## Rules
@@ -54,4 +54,17 @@ Directly taken from the Wikipedia page of the [Conway's Game of Life](https://en
 
 ## General Structure
 
-Will be updated soon.
+### Directory Structure and Files
+
+- `src/` directory contains the source code
+  - `src/main.cpp` is the entry point of the program
+  - `src/game.hpp` contains the declarations of the methods
+  - `src/game_of_life.cpp` contains the implementation
+- `stable/` directory contains the stable output
+  - `stable/game.life` is the executable
+
+### How It Goes
+
+Current version is not designed specifically to be used anywhere. Without any arguments, it will create a grid according to the `WIDTH`, `HEIGHT` and `CELL_SIZE` constants in `main.cpp`, randomly fill a grid and start the simulation.
+
+The constant `FPS` is the frame rate of the simulation. It is set to 15 by default.

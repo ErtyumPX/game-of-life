@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#define FPS 60
+#define FPS 15
 #define WIDTH 800
 #define HEIGHT 800
 #define CELL_SIZE 10 // optimally should be a factor of WIDTH and HEIGHT
