@@ -88,3 +88,15 @@ bool** create_random_grid(int WIDTH, int HEIGHT, int CELL_SIZE) {
   }
   return grid;
 }
+
+bool** create_empty_grid(int WIDTH, int HEIGHT, int CELL_SIZE) {
+  srand(time(NULL));
+  bool **grid = new bool*[WIDTH / CELL_SIZE];
+  for (int i = 0; i < WIDTH / CELL_SIZE; i++) {
+    grid[i] = new bool[HEIGHT / CELL_SIZE];
+    for (int j = 0; j < HEIGHT / CELL_SIZE; j++) {
+      grid[i][j] = 0;
+    }
+  }
+  return grid;
+}
