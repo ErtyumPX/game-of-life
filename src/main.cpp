@@ -37,6 +37,26 @@ int main(int argc, char* argv[]) {
       if (event.type == SDL_QUIT) {
         running = false;
       }
+    // mouse events
+    if (SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(SDL_BUTTON_LEFT)) {
+      int x, y;
+      SDL_GetMouseState(&x, &y);
+      if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT) {
+        continue;
+      }
+      int i = x / CELL_SIZE;
+      int j = y / CELL_SIZE;
+      grid[i][j] = true;
+    }
+    else if (SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(SDL_BUTTON_RIGHT)) {
+      int x, y;
+      SDL_GetMouseState(&x, &y);
+      if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT) {
+        continue;
+      }
+      int i = x / CELL_SIZE;
+      int j = y / CELL_SIZE;
+      grid[i][j] = false;
     }
 
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
