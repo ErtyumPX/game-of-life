@@ -9,3 +9,5 @@ void draw_grid(SDL_Renderer* renderer, bool **grid, int WIDTH, int HEIGHT, int C
 void update_grid(bool **grid, int WIDTH, int HEIGHT, int CELL_SIZE);
 
 bool** create_random_grid(int WIDTH, int HEIGHT, int CELL_SIZE);
+
+bool** create_empty_grid(int WIDTH, int HEIGHT, int CELL_SIZE);
