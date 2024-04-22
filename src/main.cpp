@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
           }
         }
         else if (event.key.keysym.sym == SDLK_e) {
-          if (fps_index < FPS_COUNT - 1) {
+          if (fps_index < (int)(FPS_COUNT - 1)) {
             fps_index++;
           }
         }
@@ -93,7 +93,7 @@ int main(int argc, char* argv[]) {
     SDL_RenderPresent(renderer);
 
     Uint32 end_time = SDL_GetTicks();
-    if (end_time - start_time < 1000 / FPS[fps_index]) {
+    if (end_time - start_time < 1000 / (Uint32)FPS[fps_index]) {
       SDL_Delay(1000 / FPS[fps_index] - (end_time - start_time));
     }
   }
